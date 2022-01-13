@@ -12,26 +12,23 @@ const AutoCompletePokemons = ({ onChange, control }) => {
   console.log(selectedPokemon);
   return (
     <Controller
-      render={(props) => (
+      render={() => (
         <Autocomplete
-          {...props}
           options={arrPokemons}
           getOptionLabel={(option) => option.name}
           renderInput={(params) => (
-            <TextField
+            <StyledTextField
               {...params}
-              label="Country"
-              placeholder="Select a Country"
-              InputLabelProps={{
-                shrink: true,
-              }}
+              required
+              label="Pokemon name"
+              placeholder="Select a Pokemon"
               variant="outlined"
             />
           )}
           onChange={(_, data) => setSelectedPokemon(data)}
         />
       )}
-      name="country"
+      name="pokemon"
       control={control}
     />
   );
