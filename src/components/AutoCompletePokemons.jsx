@@ -32,5 +32,5 @@ const AutoCompletePokemons = () => {
 export default AutoCompletePokemons;
 
 const StyledTextField = styled(TextField)`
-  width: 100vh;
+  width: 100%;
 `;
