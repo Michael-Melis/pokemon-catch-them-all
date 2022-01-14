@@ -8,10 +8,9 @@ const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
       try {
         const res = await axios.get(ability.ability.url);
 
+        console.log(res.data);
         setSelectedAbility(
-          res.data["effect_entries"].filter(
-            (obj) => obj.effect.language.name === "en"
-          )
+          res.data["effect_entries"].find((obj) => obj.language.name === "en")
         );
       } catch (error) {
         console.log(error);
@@ -19,14 +18,14 @@ const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
     };
     getAbilityData();
   }, [selectedPokemonInfo]);
-  console.log(selectedAbility);
+
   return selectedAbility ? (
     <div>
       <h2>{ability.ability.name}</h2>
-      {selectedAbility.effect}
+      <p>{selectedAbility.effect}</p>
     </div>
   ) : (
-    <></>
+    <>Loading ...</>
   );
 };
 
