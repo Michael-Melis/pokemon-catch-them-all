@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledPokemonAbilities } from "./PokemonAbilities.styles";
+import SelectedPokemonAbilityInfo from "./selectedPokemonAbilityInfo/SelectedPokemonAbilityInfo";
 
 const PokemonAbilities = ({ selectedPokemonInfo }) => {
   return (
@@ -7,7 +8,12 @@ const PokemonAbilities = ({ selectedPokemonInfo }) => {
       <h1>Main abilities:</h1>
       <div>
         {selectedPokemonInfo.abilities.map((ability) => (
-          <h2 key={ability.slot}>- {ability.ability.name}</h2>
+          <div key={ability.slot}>
+            <SelectedPokemonAbilityInfo
+              ability={ability}
+              selectedPokemonInfo={selectedPokemonInfo}
+            />
+          </div>
         ))}
       </div>
     </StyledPokemonAbilities>

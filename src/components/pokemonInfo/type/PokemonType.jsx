@@ -5,9 +5,11 @@ const PokemonType = ({ selectedPokemonInfo }) => {
   return (
     <StyledPokemonType>
       <h1>{`${selectedPokemonInfo.name}'s type: `}</h1>
-      {selectedPokemonInfo.types.map((type) => (
-        <h2 key={type.slot}>- {type.type.name}</h2>
-      ))}
+      <div>
+        {selectedPokemonInfo.types.map((type) => (
+          <h2 key={type.slot}>- {type.type.name}</h2>
+        ))}
+      </div>
     </StyledPokemonType>
   );
 };
