@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 import MainMenuInput from "../components/MainMenuInput";
 import axios from "axios";
-import { useRecoilState } from "recoil";
-import { pokemonArrayDataState } from "../atom/atom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
+import SelectedPokemonInfo from "../components/SelectedPokemonInfo";
 
 const MainPage = () => {
   const [pokemons, setPokemons] = useRecoilState(pokemonArrayDataState);
+  const selectedPokemonInfo = useRecoilValue(selectedPokemonState);
+  console.log(selectedPokemonInfo);
 
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
         const res = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50"
+          "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=3"
         );
-        console.log(res.data);
         setPokemons(res.data.results);
       } catch (error) {
         console.log(error);
@@ -26,6 +28,7 @@ const MainPage = () => {
     <div>
       <h1>Pokedex</h1>
       <MainMenuInput />
+      <SelectedPokemonInfo />
     </div>
   );
 };

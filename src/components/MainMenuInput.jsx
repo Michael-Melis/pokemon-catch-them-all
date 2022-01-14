@@ -1,24 +1,16 @@
-import { useForm } from "react-hook-form";
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { pokemonArrayDataState } from "../atom/atom";
+import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
 import AutoCompletePokemons from "./AutoCompletePokemons";
 
 const MainMenuInput = () => {
   const arrPokemons = useRecoilValue(pokemonArrayDataState);
 
-  const { handleSubmit, reset, control } = useForm();
-
-  const handlePokemonSearch = (data) => {
-    console.log(data);
-    reset();
-  };
-
   return (
-    <form onSubmit={handleSubmit(handlePokemonSearch)}>
+    <form>
       {arrPokemons ? (
         <>
-          <AutoCompletePokemons control={control} />
+          <AutoCompletePokemons />
         </>
       ) : (
         "Loading..."
