@@ -6,11 +6,10 @@ export const StyledBody = styled.div`
 `;
 
 export const StyledMainHeader = styled.div`
-  background: #fb1b1b;
+  background: #0a285f;
   padding: 2rem;
-  color: black;
+  color: #fff;
   h1 {
-    background: #fb1b1b;
     text-align: center;
     font-size: 3rem;
   }
