@@ -6,9 +6,14 @@ import {
 } from "./../atom/atom";
 import { useRecoilValue, useRecoilState } from "recoil";
 import axios from "axios";
+import PokemonType from "./pokemonInfo/type/PokemonType";
+import {
+  StyledSelectedPokemonDiv,
+  StyledInfoSection,
+} from "./../styles/SelectedPokemonInfo.styles";
 
-import { StyledSelectedPokemonDiv } from "./../styles/SelectedPokemonInfo.styles";
 import PokemonAbilities from "./pokemonInfo/abilities/PokemonAbilities";
+import PokemonBasicInfo from "./pokemonInfo/basicInfo/PokemonBasicInfo";
 
 const SelectedPokemonInfo = () => {
   const selectedPokemon = useRecoilValue(selectedPokemonState);
@@ -37,19 +42,18 @@ const SelectedPokemonInfo = () => {
       <StyledSelectedPokemonDiv>
         {pokemonImg ? (
           <>
-            <h1>
-              You choosed:{" "}
-              <span>
-                #{selectedPokemonInfo.id} {selectedPokemonInfo.name}
-              </span>
-            </h1>
-            <img src={pokemonImg} alt={selectedPokemonInfo.name} />
-            <h1>Main abilities:</h1>
-            {selectedPokemonInfo.abilities.map((ability) => (
-              <ul key={ability.slot}>
-                <PokemonAbilities ability={ability} />
-              </ul>
-            ))}
+            <StyledInfoSection>
+              <PokemonBasicInfo
+                selectedPokemonInfo={selectedPokemonInfo}
+                pokemonImg={pokemonImg}
+              />
+            </StyledInfoSection>
+            <StyledInfoSection>
+              <PokemonAbilities selectedPokemonInfo={selectedPokemonInfo} />
+            </StyledInfoSection>
+            <StyledInfoSection>
+              <PokemonType selectedPokemonInfo={selectedPokemonInfo} />
+            </StyledInfoSection>
           </>
         ) : null}
       </StyledSelectedPokemonDiv>

@@ -1,18 +1,16 @@
 import React from "react";
-import { useRecoilValue } from "recoil";
-import {
-  pokemonArrayDataState,
-  selectedPokemonInfoState,
-} from "./../../../atom/atom";
+import { StyledPokemonAbilities } from "./PokemonAbilities.styles";
 
-const PokemonAbilities = ({ ability }) => {
-  const selectedPokemonInfo = useRecoilValue(selectedPokemonInfoState);
-
-  console.log(selectedPokemonInfo);
+const PokemonAbilities = ({ selectedPokemonInfo }) => {
   return (
-    <div>
-      <h2>{ability.ability.name}</h2>
-    </div>
+    <StyledPokemonAbilities>
+      <h1>Main abilities:</h1>
+      <div>
+        {selectedPokemonInfo.abilities.map((ability) => (
+          <h2 key={ability.slot}>- {ability.ability.name}</h2>
+        ))}
+      </div>
+    </StyledPokemonAbilities>
   );
 };
 

@@ -12,7 +12,6 @@ export const StyledMainHeader = styled.div`
   h1 {
     background: #fb1b1b;
     text-align: center;
-    margin: 2rem 0;
     font-size: 3rem;
   }
 `;

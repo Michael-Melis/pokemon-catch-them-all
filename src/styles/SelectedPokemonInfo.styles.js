@@ -6,15 +6,17 @@ export const StyledSelectedPokemonDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  h1 {
-    margin: 1rem 0;
-    span {
-      font-size: 3rem;
-    }
-  }
+
   img {
-    width: 60vw;
-    height: 60vh;
+    width: 30vw;
+    height: 30vh;
     object-fit: contain;
   }
+`;
+export const StyledInfoSection = styled.div`
+  border: 6px solid black;
+  border-radius: 15px;
+  margin: 1rem 0;
+  width: 80vw;
+  padding: 1rem;
 `;
