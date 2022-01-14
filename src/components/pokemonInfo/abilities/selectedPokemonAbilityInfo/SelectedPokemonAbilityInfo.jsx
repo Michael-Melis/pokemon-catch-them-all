@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { StyledSelectedPokemonAbilityInfo } from "./SelectedPokemonAbilityInfo.styles";
 
 const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
   const [selectedAbility, setSelectedAbility] = useState();
@@ -18,10 +19,10 @@ const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
   }, [selectedPokemonInfo]);
 
   return selectedAbility ? (
-    <div>
-      <h2>{ability.ability.name}</h2>
+    <StyledSelectedPokemonAbilityInfo>
+      <h2>{ability.ability.name}:</h2>
       <p>{selectedAbility.effect}</p>
-    </div>
+    </StyledSelectedPokemonAbilityInfo>
   ) : (
     <>Loading ...</>
   );

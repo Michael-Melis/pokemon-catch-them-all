@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledPokemonType } from "./PokemonType.styles";
+import { StyledPokemonType, StyledPokemonTypesDiv } from "./PokemonType.styles";
 import SelectedPokemonTypeInfo from "./SelectedPokemonTypeInfo/SelectedPokemonTypeInfo";
 
 const PokemonType = ({ selectedPokemonInfo }) => {
@@ -7,7 +7,7 @@ const PokemonType = ({ selectedPokemonInfo }) => {
   return (
     <StyledPokemonType>
       <h1>{`${selectedPokemonInfo.name}'s type: `}</h1>
-      <div>
+      <StyledPokemonTypesDiv>
         {selectedPokemonInfo.types.map((type) => (
           <div key={type.slot}>
             <SelectedPokemonTypeInfo
@@ -16,7 +16,7 @@ const PokemonType = ({ selectedPokemonInfo }) => {
             />
           </div>
         ))}
-      </div>
+      </StyledPokemonTypesDiv>
     </StyledPokemonType>
   );
 };
