@@ -5,14 +5,13 @@ import {
   selectedPokemonInfoState,
 } from "./../../../atom/atom";
 
-const PokemonAbilities = () => {
+const PokemonAbilities = ({ ability }) => {
   const selectedPokemonInfo = useRecoilValue(selectedPokemonInfoState);
-  const arrPokemons = useRecoilValue(pokemonArrayDataState);
 
   console.log(selectedPokemonInfo);
   return (
     <div>
-      <h2>Abilities</h2>
+      <h2>{ability.ability.name}</h2>
     </div>
   );
 };

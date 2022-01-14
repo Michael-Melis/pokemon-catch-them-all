@@ -8,6 +8,9 @@ export const StyledSelectedPokemonDiv = styled.div`
   align-items: center;
   h1 {
     margin: 1rem 0;
+    span {
+      font-size: 3rem;
+    }
   }
   img {
     width: 60vw;
