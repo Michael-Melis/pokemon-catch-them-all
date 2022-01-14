@@ -7,7 +7,7 @@ export const StyledPokemonType = styled.div`
   align-items: center;
   flex-wrap: wrap;
   h2 {
-    display: flex;
-    flex-direction: column;
+    font-size: 2rem;
+    text-decoration: underline;
   }
 `;

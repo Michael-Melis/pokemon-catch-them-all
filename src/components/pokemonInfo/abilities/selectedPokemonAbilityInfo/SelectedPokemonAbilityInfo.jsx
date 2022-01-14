@@ -7,8 +7,6 @@ const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
     const getAbilityData = async () => {
       try {
         const res = await axios.get(ability.ability.url);
-
-        console.log(res.data);
         setSelectedAbility(
           res.data["effect_entries"].find((obj) => obj.language.name === "en")
         );
