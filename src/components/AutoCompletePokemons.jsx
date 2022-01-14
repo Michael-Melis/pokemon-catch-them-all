@@ -1,9 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { Autocomplete, TextField } from "@mui/material";
-import { Controller } from "react-hook-form";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
+import {
+  StyledInputTextField,
+  StyledInputDiv,
+} from "../styles/AutoCompletePokemons.styles";
 
 const AutoCompletePokemons = () => {
   const [selectedPokemon, setSelectedPokemon] =
@@ -12,25 +14,22 @@ const AutoCompletePokemons = () => {
   const arrPokemons = useRecoilValue(pokemonArrayDataState);
 
   return (
-    <Autocomplete
-      options={arrPokemons}
-      getOptionLabel={(option) => option.name}
-      renderInput={(params) => (
-        <StyledTextField
-          {...params}
-          required
-          label="Pokemon name"
-          placeholder="Select a Pokemon"
-          variant="outlined"
-        />
-      )}
-      onChange={(_, data) => setSelectedPokemon(data)}
-    />
+    <StyledInputDiv>
+      <Autocomplete
+        options={arrPokemons}
+        getOptionLabel={(option) => option.name}
+        renderInput={(params) => (
+          <StyledInputTextField
+            {...params}
+            required
+            placeholder="Select a Pokemon"
+            variant="standard"
+          />
+        )}
+        onChange={(_, data) => setSelectedPokemon(data)}
+      />
+    </StyledInputDiv>
   );
 };
 
 export default AutoCompletePokemons;
-
-const StyledTextField = styled(TextField)`
-  width: 100%;
-`;

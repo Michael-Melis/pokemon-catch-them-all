@@ -7,6 +7,8 @@ import {
 import { useRecoilValue, useRecoilState } from "recoil";
 import axios from "axios";
 
+import { StyledSelectedPokemonDiv } from "./../styles/SelectedPokemonInfo.styles";
+
 const SelectedPokemonInfo = () => {
   const selectedPokemon = useRecoilValue(selectedPokemonState);
   const [selectedPokemonInfo, setSelectedPokemonInfo] = useRecoilState(
@@ -28,12 +30,15 @@ const SelectedPokemonInfo = () => {
     };
     fetchActivePokemonData();
   }, [selectedPokemon]);
-  console.log(selectedPokemonInfo);
 
   return (
     <>
-      <h1>{selectedPokemonInfo.name}</h1>
-      <img src={pokemonImg} alt="" />
+      <StyledSelectedPokemonDiv>
+        <h1>{selectedPokemonInfo.name}</h1>
+        {pokemonImg ? (
+          <img src={pokemonImg} alt={selectedPokemonInfo.name} />
+        ) : null}
+      </StyledSelectedPokemonDiv>
     </>
   );
 };
