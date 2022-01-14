@@ -14,7 +14,7 @@ const MainPage = () => {
     const fetchPokemonData = async () => {
       try {
         const res = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=3"
+          "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
         );
         setPokemons(res.data.results);
       } catch (error) {
