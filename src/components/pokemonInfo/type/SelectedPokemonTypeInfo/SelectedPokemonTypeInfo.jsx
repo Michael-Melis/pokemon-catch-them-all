@@ -19,7 +19,7 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonInfo }) => {
   }, [selectedPokemonInfo]);
   console.log(selectedTypeInfo);
   return selectedTypeInfo ? (
-    <StyledSelectedPokemonTypeInfo>
+    <StyledSelectedPokemonTypeInfo type={type}>
       <h2>{type.type.name}</h2>
       <div>
         <div>
