@@ -7,8 +7,10 @@ const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
       <h1>
         You choosed:
         <span>
-          {" "}
-          #{selectedPokemonInfo.id} {selectedPokemonInfo.name}
+          #{selectedPokemonInfo.id}{" "}
+          {`${selectedPokemonInfo.name
+            .charAt(0)
+            .toUpperCase()}${selectedPokemonInfo.name.slice(1)}`}
         </span>
       </h1>
 

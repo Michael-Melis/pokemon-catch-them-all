@@ -3,10 +3,11 @@ import { StyledPokemonType, StyledPokemonTypesDiv } from "./PokemonType.styles";
 import SelectedPokemonTypeInfo from "./SelectedPokemonTypeInfo/SelectedPokemonTypeInfo";
 
 const PokemonType = ({ selectedPokemonInfo }) => {
-  console.log(selectedPokemonInfo);
   return (
     <StyledPokemonType>
-      <h1>{`${selectedPokemonInfo.name}'s type: `}</h1>
+      <h1>{`${selectedPokemonInfo.name
+        .charAt(0)
+        .toUpperCase()}${selectedPokemonInfo.name.slice(1)}'s type: `}</h1>
       <StyledPokemonTypesDiv>
         {selectedPokemonInfo.types.map((type) => (
           <div key={type.slot}>
