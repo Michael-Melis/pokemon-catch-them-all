@@ -2,25 +2,30 @@ import React from "react";
 
 const PokemonStatsInfo = ({ obj }) => {
   const actualStat = obj.stat.name;
+  const maxHp = 255;
+  const maxAttack = 190;
+  const maxDefense = 230;
+  const maxSpecialAttack = 180;
+  const maxSpecialDefense = 230;
+  const maxSpeed = 200;
   const renderSwitch = (actualStat) => {
     switch (actualStat) {
       case "hp":
-        return Math.round((obj["base_stat"] * 100) / 255);
+        return Math.round((obj["base_stat"] * 100) / maxHp);
       case "attack":
-        return Math.round((obj["base_stat"] * 100) / 190);
+        return Math.round((obj["base_stat"] * 100) / maxAttack);
       case "defense":
-        return Math.round((obj["base_stat"] * 100) / 230);
+        return Math.round((obj["base_stat"] * 100) / maxDefense);
       case "special-attack":
-        return Math.round((obj["base_stat"] * 100) / 180);
+        return Math.round((obj["base_stat"] * 100) / maxSpecialAttack);
       case "special-defense":
-        return Math.round((obj["base_stat"] * 100) / 230);
+        return Math.round((obj["base_stat"] * 100) / maxSpecialDefense);
       case "speed":
-        return Math.round((obj["base_stat"] * 100) / 200);
+        return Math.round((obj["base_stat"] * 100) / maxSpeed);
       default:
-        return obj;
+        return null;
     }
   };
-  console.log(renderSwitch(actualStat));
 
   return (
     <div>
