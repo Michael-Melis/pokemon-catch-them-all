@@ -4,12 +4,14 @@ export const StyledEvolutionComponent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const StyledPokemonEvolutionDiv = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
+  flex-wrap: wrap;
 `;
 
 export const StyledSinglePokemonDiv = styled.div`

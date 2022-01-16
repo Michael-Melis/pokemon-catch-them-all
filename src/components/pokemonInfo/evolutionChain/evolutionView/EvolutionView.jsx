@@ -6,7 +6,6 @@ import {
   StyledSinglePokemonDiv,
   StyledImgArrowDiv,
 } from "./EvolutionView.styles";
-import { ArrowForward } from "@mui/icons-material";
 
 const EvolutionView = ({ pokemonEvolutionInfo, selectedPokemonInfo }) => {
   const [firstPokemonInChain, setFirstPokemonInChain] = useState({});
@@ -102,7 +101,6 @@ const EvolutionView = ({ pokemonEvolutionInfo, selectedPokemonInfo }) => {
                 </h2>
               </div>
               <StyledImgArrowDiv>
-                <ArrowForward fontSize="large" />
                 <img
                   src={secondPokemonInChainImg}
                   alt={secondPokemonInChain.name}
@@ -122,7 +120,6 @@ const EvolutionView = ({ pokemonEvolutionInfo, selectedPokemonInfo }) => {
                   : thirdPokemonInChain.name}
               </h2>
               <StyledImgArrowDiv>
-                <ArrowForward fontSize="large" />
                 <img
                   src={thirdPokemonInChainImg}
                   alt={thirdPokemonInChain.name}
