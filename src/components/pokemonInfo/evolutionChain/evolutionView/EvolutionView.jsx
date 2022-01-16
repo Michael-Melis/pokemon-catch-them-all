@@ -4,6 +4,7 @@ import {
   StyledEvolutionComponent,
   StyledPokemonEvolutionDiv,
   StyledSinglePokemonDiv,
+  StyledImgArrowDiv,
 } from "./EvolutionView.styles";
 import { ArrowForward } from "@mui/icons-material";
 
@@ -76,34 +77,59 @@ const EvolutionView = ({ pokemonEvolutionInfo, selectedPokemonInfo }) => {
       <h1>Evolution chain</h1>
       <StyledPokemonEvolutionDiv>
         <StyledSinglePokemonDiv>
-          <h2>{firstPokemonInChain.name}</h2>
-          <img src={firstPokemonInChainImg} alt={firstPokemonInChain.name} />
+          <div>
+            <h2>
+              {firstPokemonInChain.name
+                ? firstPokemonInChain.name.charAt(0).toUpperCase() +
+                  firstPokemonInChain.name.slice(1)
+                : firstPokemonInChain.name}
+            </h2>
+          </div>
+          <StyledImgArrowDiv>
+            <img src={firstPokemonInChainImg} alt={firstPokemonInChain.name} />
+          </StyledImgArrowDiv>
         </StyledSinglePokemonDiv>
-        <ArrowForward fontSize="large" />
+
         <StyledSinglePokemonDiv>
           {secondPokemonInChain !== null ? (
             <>
-              <h2>{secondPokemonInChain.name}</h2>
-              <img
-                src={secondPokemonInChainImg}
-                alt={firstPokemonInChain.name}
-              />
+              <div>
+                <h2>
+                  {secondPokemonInChain.name
+                    ? secondPokemonInChain.name.charAt(0).toUpperCase() +
+                      secondPokemonInChain.name.slice(1)
+                    : secondPokemonInChain.name}
+                </h2>
+              </div>
+              <StyledImgArrowDiv>
+                <ArrowForward fontSize="large" />
+                <img
+                  src={secondPokemonInChainImg}
+                  alt={secondPokemonInChain.name}
+                />
+              </StyledImgArrowDiv>
             </>
-          ) : (
-            ""
-          )}
+          ) : null}
         </StyledSinglePokemonDiv>
-        <ArrowForward fontSize="large" />
+
         <StyledSinglePokemonDiv>
           {thirdPokemonInChain !== null ? (
             <>
-              {" "}
-              <h2>{thirdPokemonInChain.name}</h2>{" "}
-              <img src={thirdPokemonInChainImg} alt="" />{" "}
+              <h2>
+                {thirdPokemonInChain.name
+                  ? thirdPokemonInChain.name.charAt(0).toUpperCase() +
+                    thirdPokemonInChain.name.slice(1)
+                  : thirdPokemonInChain.name}
+              </h2>
+              <StyledImgArrowDiv>
+                <ArrowForward fontSize="large" />
+                <img
+                  src={thirdPokemonInChainImg}
+                  alt={thirdPokemonInChain.name}
+                />
+              </StyledImgArrowDiv>
             </>
-          ) : (
-            ""
-          )}
+          ) : null}
         </StyledSinglePokemonDiv>
       </StyledPokemonEvolutionDiv>
     </StyledEvolutionComponent>

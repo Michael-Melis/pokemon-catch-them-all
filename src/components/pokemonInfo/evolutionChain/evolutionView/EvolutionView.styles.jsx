@@ -9,13 +9,20 @@ export const StyledEvolutionComponent = styled.div`
 export const StyledPokemonEvolutionDiv = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 export const StyledSinglePokemonDiv = styled.div`
-  margin: 0 3rem;
-  text-align: center;
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+`;
+export const StyledImgArrowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   img {
     margin-top: 1rem;
     width: 15vw;
