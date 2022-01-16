@@ -1,5 +1,5 @@
 import React from "react";
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, TextField, Box } from "@mui/material";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
 import {
@@ -12,12 +12,19 @@ const AutoCompletePokemons = () => {
     useRecoilState(selectedPokemonState);
 
   const arrPokemons = useRecoilValue(pokemonArrayDataState);
+  console.log(arrPokemons);
 
   return (
     <StyledInputDiv>
       <Autocomplete
         options={arrPokemons}
         getOptionLabel={(option) => option.name}
+        renderOption={(props, option) => (
+          <Box {...props}>
+            {option.name.charAt(0).toUpperCase()}
+            {option.name.slice(1)}
+          </Box>
+        )}
         renderInput={(params) => (
           <StyledInputTextField
             {...params}

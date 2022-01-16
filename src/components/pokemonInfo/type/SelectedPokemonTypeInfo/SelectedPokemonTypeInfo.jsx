@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { StyledSelectedPokemonTypeInfo } from "./SelectedPokemonTypeInfo.styles";
+import {
+  StyledSelectedPokemonTypeInfo,
+  StyledDamage,
+} from "./SelectedPokemonTypeInfo.styles";
 import { nanoid } from "nanoid";
 
 const SelectedPokemonTypeInfo = ({ type, selectedPokemonInfo }) => {
@@ -34,6 +37,7 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonInfo }) => {
             <p key={nanoid()}>{obj.name} type</p>
           ))}
         </div>
+
         <div>
           <h3>Double damage from:</h3>
           {selectedTypeInfo["double_damage_from"].map((obj) => (
