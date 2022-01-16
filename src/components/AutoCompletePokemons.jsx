@@ -21,6 +21,7 @@ const AutoCompletePokemons = () => {
         getOptionLabel={(option) => option.name}
         renderOption={(props, option) => (
           <Box {...props}>
+            #{arrPokemons.findIndex((obj) => obj.name === option.name) + 1}{" "}
             {option.name.charAt(0).toUpperCase()}
             {option.name.slice(1)}
           </Box>
