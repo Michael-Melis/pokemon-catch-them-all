@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledBasicInfo, StyledStats } from "./PokemonBasicInfo.styles";
 import { nanoid } from "nanoid";
+import PokemonStatsInfo from "./pokemonStatsInfo/PokemonStatsInfo";
 
 const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
   console.log(selectedPokemonInfo);
@@ -22,18 +23,7 @@ const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
       <div>
         {selectedPokemonInfo.stats.map((obj) => (
           <StyledStats key={nanoid()}>
-            <div>
-              <h2>{obj.stat.name}</h2>
-            </div>
-            <div>
-              <p
-                style={{
-                  background: `-webkit-linear-gradient(left, #70d9dd ${obj["base_stat"]}%, white 0%)`,
-                }}
-              >
-                {obj["base_stat"]}
-              </p>
-            </div>
+            <PokemonStatsInfo obj={obj} />
           </StyledStats>
         ))}
       </div>
