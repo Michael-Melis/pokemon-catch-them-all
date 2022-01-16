@@ -11,7 +11,7 @@ import {
   StyledSelectedPokemonDiv,
   StyledInfoSection,
 } from "./../styles/SelectedPokemonInfo.styles";
-
+import EvolutionChain from "./pokemonInfo/evolutionChain/EvolutionChain";
 import PokemonAbilities from "./pokemonInfo/abilities/PokemonAbilities";
 import PokemonBasicInfo from "./pokemonInfo/basicInfo/PokemonBasicInfo";
 
@@ -53,6 +53,9 @@ const SelectedPokemonInfo = () => {
             </StyledInfoSection>
             <StyledInfoSection>
               <PokemonType selectedPokemonInfo={selectedPokemonInfo} />
+            </StyledInfoSection>
+            <StyledInfoSection>
+              <EvolutionChain selectedPokemonInfo={selectedPokemonInfo} />
             </StyledInfoSection>
           </>
         ) : null}

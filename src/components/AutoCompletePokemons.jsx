@@ -12,7 +12,6 @@ const AutoCompletePokemons = () => {
     useRecoilState(selectedPokemonState);
 
   const arrPokemons = useRecoilValue(pokemonArrayDataState);
-  console.log(arrPokemons);
 
   return (
     <StyledInputDiv>

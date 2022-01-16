@@ -12,10 +12,15 @@ export const selectedPokemonState = atom({
 
 export const selectedPokemonInfoState = atom({
   key: "selectedPokemonInfoState",
-  default: [],
+  default: {},
 });
 
 export const selectedPokemonImgState = atom({
   key: "selectedPokemonImgState",
   default: "",
+});
+
+export const selectedPokemonEvolutionState = atom({
+  key: "selectedPokemonEvolutionState",
+  default: {},
 });
