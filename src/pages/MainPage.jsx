@@ -4,7 +4,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
 import SelectedPokemonInfo from "../components/SelectedPokemonInfo";
 import { StyledBody, StyledMainHeader } from "../styles/MainPage.styles";
-
+import PokemonList from "../components/pokemonDataView/listOfPokemons/PokemonList";
 import AutoCompletePokemons from "./../components/AutoCompletePokemons";
 
 const MainPage = () => {
@@ -17,7 +17,7 @@ const MainPage = () => {
         const res = await axios.get(
           "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
         );
-        console.log(res);
+
         setPokemons(res.data.results);
       } catch (error) {
         console.log(error);
@@ -33,6 +33,7 @@ const MainPage = () => {
         <AutoCompletePokemons />
       </StyledMainHeader>
       <SelectedPokemonInfo />
+      <PokemonList />
     </StyledBody>
   );
 };
