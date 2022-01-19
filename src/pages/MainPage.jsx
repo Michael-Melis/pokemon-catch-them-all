@@ -12,10 +12,12 @@ const MainPage = () => {
 
   useEffect(() => {
     const fetchPokemonData = async () => {
+      //151 kanto-898 all
       try {
         const res = await axios.get(
           "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
         );
+        console.log(res);
         setPokemons(res.data.results);
       } catch (error) {
         console.log(error);
