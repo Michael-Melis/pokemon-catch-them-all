@@ -29,7 +29,7 @@ const PokemonList = () => {
     fetchAllPokemonsData();
   }, [allPokemons]);
 
-  //   console.log(allPokemosnArray);
+  console.log(allPokemonArray);
   return allPokemonArray ? (
     <StyledAllPokemonsView>
       {allPokemonArray.map((pokemon, index) => (

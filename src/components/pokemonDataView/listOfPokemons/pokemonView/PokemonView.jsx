@@ -16,7 +16,9 @@ const PokemonView = ({ pokemon, index }) => {
       <img src={pokemon.sprites["front_default"]} alt={pokemon.name} />
       <h2>
         {`
-        #${number(index + 1)} ${pokemon.name}`}
+        #${number(index + 1)} ${pokemon.name
+          .charAt(0)
+          .toUpperCase()}${pokemon.name.slice(1)}`}
       </h2>
     </StyledSinglePokemonViewDiv>
   );
