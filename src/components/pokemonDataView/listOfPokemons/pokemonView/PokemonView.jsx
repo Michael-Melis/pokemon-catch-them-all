@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyledSinglePokemonViewDiv } from "./PokemonView.styles";
+import axios from "axios";
+import { nanoid } from "nanoid";
+import { allPokemonsTypeInfoState } from "../../../../atom/atom";
+import { useRecoilState } from "recoil";
 
 const PokemonView = ({ pokemon, index }) => {
+  const [typeInfo, setTypeInfo] = useRecoilState(allPokemonsTypeInfoState);
+
   const number = (index) => {
     if (index < 10) {
       return "00" + index;
@@ -11,6 +17,25 @@ const PokemonView = ({ pokemon, index }) => {
       return index;
     }
   };
+
+  useEffect(() => {
+    const fetchAllPokemonsData = async () => {
+      const array = [];
+      pokemon.types.forEach((obj) => {
+        try {
+          const res = axios.get(obj.type.url);
+          array.push(res);
+        } catch (error) {
+          console.log(error);
+        }
+      });
+      const result = await Promise.all(array);
+      // setTypeInfo(result);
+    };
+
+    fetchAllPokemonsData();
+  }, [pokemon]);
+
   return (
     <StyledSinglePokemonViewDiv>
       <img src={pokemon.sprites["front_default"]} alt={pokemon.name} />

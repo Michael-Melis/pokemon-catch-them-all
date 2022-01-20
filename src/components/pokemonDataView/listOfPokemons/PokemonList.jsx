@@ -3,39 +3,48 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import {
   pokemonArrayDataState,
   allPokemonsDataViewState,
+  allPokemonsTypeInfoState,
 } from "../../../atom/atom";
 import PokemonView from "./pokemonView/PokemonView";
 import { nanoid } from "nanoid";
 import axios from "axios";
-import { StyledAllPokemonsView } from "./PokemonList.styles";
+import {
+  StyledAllPokemonsView,
+  StyledTypeDivBg,
+  StyledPokemonDiv,
+} from "./PokemonList.styles";
 
 const PokemonList = () => {
   const allPokemons = useRecoilValue(pokemonArrayDataState);
   const [allPokemonArray, setAllPokemonArray] = useRecoilState(
     allPokemonsDataViewState
   );
+  const [typeArr, setTypeArr] = useState([]);
 
   useEffect(() => {
     const fetchAllPokemonsData = async () => {
-      const promises = [];
-
+      const pokemonInfoArray = [];
       allPokemons.forEach((obj) => {
         const res = axios.get(obj.url);
-        promises.push(res);
+        pokemonInfoArray.push(res);
       });
-      const results = await Promise.all(promises);
+      const results = await Promise.all(pokemonInfoArray);
       setAllPokemonArray(results.map((result) => result.data));
     };
     fetchAllPokemonsData();
   }, [allPokemons]);
-
-  console.log(allPokemonArray);
+  console.log(typeArr);
   return allPokemonArray ? (
     <StyledAllPokemonsView>
       {allPokemonArray.map((pokemon, index) => (
-        <div key={nanoid()}>
+        <StyledPokemonDiv key={nanoid()}>
           <PokemonView pokemon={pokemon} index={index} />
-        </div>
+          {pokemon.types.map((type) => (
+            <StyledTypeDivBg type={type} key={nanoid()}>
+              {type.type.name}
+            </StyledTypeDivBg>
+          ))}
+        </StyledPokemonDiv>
       ))}
     </StyledAllPokemonsView>
   ) : (

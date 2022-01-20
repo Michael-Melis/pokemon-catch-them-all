@@ -4,7 +4,6 @@ import { nanoid } from "nanoid";
 import PokemonStatsInfo from "./pokemonStatsInfo/PokemonStatsInfo";
 
 const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
-  console.log(selectedPokemonInfo);
   return (
     <div>
       <StyledBasicInfo>

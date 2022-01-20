@@ -28,3 +28,8 @@ export const allPokemonsDataViewState = atom({
   key: "allPokemonsDataViewState",
   default: [],
 });
+
+export const allPokemonsTypeInfoState = atom({
+  key: "allPokemonsTypeInfoState",
+  default: [],
+});

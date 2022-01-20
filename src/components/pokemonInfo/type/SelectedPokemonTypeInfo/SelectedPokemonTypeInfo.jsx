@@ -13,7 +13,7 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonInfo }) => {
       try {
         const res = await axios.get(type.type.url);
 
-        setSelectedTypeInfo(res.data["damage_relations"]);
+        setSelectedTypeInfo(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -27,28 +27,34 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonInfo }) => {
       <div>
         <div>
           <h3>Double damage to:</h3>
-          {selectedTypeInfo["double_damage_to"].map((obj) => (
-            <p key={nanoid()}>{obj.name} type</p>
-          ))}
+          {selectedTypeInfo["damage_relations"]["double_damage_to"].map(
+            (obj) => (
+              <p key={nanoid()}>{obj.name} type</p>
+            )
+          )}
         </div>
         <div>
           <h3>Half damage to:</h3>
-          {selectedTypeInfo["half_damage_to"].map((obj) => (
+          {selectedTypeInfo["damage_relations"]["half_damage_to"].map((obj) => (
             <p key={nanoid()}>{obj.name} type</p>
           ))}
         </div>
 
         <div>
           <h3>Double damage from:</h3>
-          {selectedTypeInfo["double_damage_from"].map((obj) => (
-            <p key={nanoid()}>{obj.name} type</p>
-          ))}
+          {selectedTypeInfo["damage_relations"]["double_damage_from"].map(
+            (obj) => (
+              <p key={nanoid()}>{obj.name} type</p>
+            )
+          )}
         </div>
         <div>
           <h3>Half damage from:</h3>
-          {selectedTypeInfo["half_damage_from"].map((obj) => (
-            <p key={nanoid()}>{obj.name} type</p>
-          ))}
+          {selectedTypeInfo["damage_relations"]["half_damage_from"].map(
+            (obj) => (
+              <p key={nanoid()}>{obj.name} type</p>
+            )
+          )}
         </div>
       </div>
     </StyledSelectedPokemonTypeInfo>
