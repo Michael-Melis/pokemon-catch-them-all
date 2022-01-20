@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import {
   pokemonArrayDataState,
   allPokemonsDataViewState,
-  allPokemonsTypeInfoState,
   pokemonTypeSelectState,
 } from "../../../atom/atom";
 import PokemonView from "./pokemonView/PokemonView";
@@ -14,7 +13,6 @@ import {
   StyledTypeDivBg,
   StyledPokemonDiv,
 } from "./PokemonList.styles";
-import { Autocomplete, TextField } from "@mui/material";
 
 const PokemonList = () => {
   const allPokemons = useRecoilValue(pokemonArrayDataState);
@@ -24,83 +22,11 @@ const PokemonList = () => {
   const pokemonTypeSelect = useRecoilValue(pokemonTypeSelectState);
 
   const renderTypeSwitch = (pokemonTypeSelect) => {
-    switch (pokemonTypeSelect) {
-      case "fire":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "grass":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "poison":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "water":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "electric":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "ice":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "fighting":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "ground":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "flying":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "psychic":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "bug":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "rock":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "ghost":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "dragon":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "dark":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "steel":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "fairy":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-      case "normal":
-        return allPokemonArray.filter(
-          (obj) => obj.types[0].type.name === pokemonTypeSelect
-        );
-
-      default:
-        return allPokemonArray;
-    }
+    return allPokemonArray.filter((obj) => {
+      return obj.types.some((type) => {
+        return type.type.name === pokemonTypeSelect;
+      });
+    });
   };
 
   useEffect(() => {
@@ -115,7 +41,7 @@ const PokemonList = () => {
     };
     fetchAllPokemonsData();
   }, [allPokemons]);
-  console.log(renderTypeSwitch(pokemonTypeSelect));
+
   return allPokemonArray ? (
     <StyledAllPokemonsView>
       {renderTypeSwitch(pokemonTypeSelect).map((pokemon, index) => (
