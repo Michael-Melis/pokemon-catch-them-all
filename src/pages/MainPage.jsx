@@ -6,6 +6,7 @@ import SelectedPokemonInfo from "../components/SelectedPokemonInfo";
 import { StyledBody, StyledMainHeader } from "../styles/MainPage.styles";
 import PokemonList from "../components/pokemonDataView/listOfPokemons/PokemonList";
 import AutoCompletePokemons from "./../components/AutoCompletePokemons";
+import PokemonFilter from "../components/PokemonFilter";
 
 const MainPage = () => {
   const [pokemons, setPokemons] = useRecoilState(pokemonArrayDataState);
@@ -31,6 +32,7 @@ const MainPage = () => {
       <StyledMainHeader>
         <h1>Pokedex</h1>
         <AutoCompletePokemons />
+        <PokemonFilter />
       </StyledMainHeader>
       <SelectedPokemonInfo />
       <PokemonList />

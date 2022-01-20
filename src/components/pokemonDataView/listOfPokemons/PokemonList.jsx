@@ -13,13 +13,13 @@ import {
   StyledTypeDivBg,
   StyledPokemonDiv,
 } from "./PokemonList.styles";
+import { Autocomplete, TextField } from "@mui/material";
 
 const PokemonList = () => {
   const allPokemons = useRecoilValue(pokemonArrayDataState);
   const [allPokemonArray, setAllPokemonArray] = useRecoilState(
     allPokemonsDataViewState
   );
-  const [typeArr, setTypeArr] = useState([]);
 
   useEffect(() => {
     const fetchAllPokemonsData = async () => {
@@ -33,7 +33,7 @@ const PokemonList = () => {
     };
     fetchAllPokemonsData();
   }, [allPokemons]);
-  console.log(typeArr);
+
   return allPokemonArray ? (
     <StyledAllPokemonsView>
       {allPokemonArray.map((pokemon, index) => (
