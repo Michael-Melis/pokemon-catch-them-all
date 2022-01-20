@@ -22,6 +22,10 @@ const PokemonList = () => {
   const pokemonTypeSelect = useRecoilValue(pokemonTypeSelectState);
 
   const renderTypeSwitch = (pokemonTypeSelect) => {
+    if (pokemonTypeSelect === "all") {
+      return allPokemonArray;
+    }
+
     return allPokemonArray.filter((obj) => {
       return obj.types.some((type) => {
         return type.type.name === pokemonTypeSelect;

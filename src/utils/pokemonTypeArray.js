@@ -1,8 +1,8 @@
 export const typeArray = [
-  // {
-  //   id: 0,
-  //   name: "all",
-  // },
+  {
+    id: 0,
+    name: "all",
+  },
   {
     id: 1,
     name: "fire",
