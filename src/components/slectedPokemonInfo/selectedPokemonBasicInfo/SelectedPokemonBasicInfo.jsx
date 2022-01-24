@@ -34,14 +34,14 @@ const SelectedPokemonBasicInfo = () => {
       }
     };
     fecthActualPokemonPage();
-  }, [name]);
+  }, []);
 
   return selectedPokemonObject !== undefined ? (
     <div>
       <Link to="/">Back</Link>
       <StyledBasicInfo>
         <h1>
-          You choosed:
+          You chose:
           <span>
             #{selectedPokemonObject?.id}{" "}
             {`${selectedPokemonObject?.name
