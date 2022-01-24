@@ -1,3 +1,5 @@
-Pokedex application
+This is Pokedex application - personal project.
 
-to run : yarn start
+I am using free to use pokeapi :)
+
+to make this app run
