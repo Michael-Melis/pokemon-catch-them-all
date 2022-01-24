@@ -21,16 +21,18 @@ const SelectedPokemonBasicInfo = () => {
     selectedPokemonInformationState
   );
   let { name } = useParams();
-  console.log(name);
+
   useEffect(() => {
     const fecthActualPokemonPage = async () => {
       try {
         const res = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${name}`
         );
+        console.log(res.data);
         setSelectedPokemonObject(res.data);
       } catch (error) {
         console.log(error);
+        setSelectedPokemonObject(undefined);
       }
     };
     fecthActualPokemonPage();
@@ -97,7 +99,9 @@ const SelectedPokemonBasicInfo = () => {
       <SelectedPokemonEvoChain selectedPokemonObject={selectedPokemonObject} />
     </div>
   ) : (
-    <p>Loading ...</p>
+    <p>
+      Something went wrong please return to the <Link to="/">Home Page</Link>
+    </p>
   );
 };
 
