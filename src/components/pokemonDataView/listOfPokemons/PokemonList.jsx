@@ -45,7 +45,7 @@ const PokemonList = () => {
     };
     fetchAllPokemonsData();
   }, [allPokemons]);
-
+  console.log(allPokemonArray);
   return allPokemonArray ? (
     <StyledAllPokemonsView>
       {renderTypeSwitch(pokemonTypeSelect).map((pokemon, index) => (

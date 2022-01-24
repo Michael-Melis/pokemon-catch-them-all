@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import {
-  StyledSelectedPokemonTypeInfo,
-  StyledDamage,
-} from "./SelectedPokemonTypeInfo.styles";
 import { nanoid } from "nanoid";
+import axios from "axios";
+import { StyledSelectedPokemonTypeInfo } from "../../pokemonInfo/type/SelectedPokemonTypeInfo/SelectedPokemonTypeInfo.styles";
 
-const SelectedPokemonTypeInfo = ({ type, selectedPokemonObject }) => {
+const SelectedPokemonTypeInfo = ({ type, result }) => {
   const [selectedTypeInfo, setSelectedTypeInfo] = useState();
   useEffect(() => {
     const getAbilityData = async () => {
@@ -19,10 +16,10 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonObject }) => {
       }
     };
     getAbilityData();
-  }, [selectedPokemonObject]);
+  }, [result]);
 
-  return selectedTypeInfo ? (
-    <StyledSelectedPokemonTypeInfo type={type}>
+  return (
+    <div>
       <h2>{type.type.name}</h2>
       <div>
         <div>
@@ -57,9 +54,7 @@ const SelectedPokemonTypeInfo = ({ type, selectedPokemonObject }) => {
           )}
         </div>
       </div>
-    </StyledSelectedPokemonTypeInfo>
-  ) : (
-    <>Loading ...</>
+    </div>
   );
 };
 

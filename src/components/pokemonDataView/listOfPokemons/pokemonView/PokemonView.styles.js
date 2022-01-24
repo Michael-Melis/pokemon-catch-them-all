@@ -6,6 +6,10 @@ export const StyledSinglePokemonViewDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2rem;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   img {
     width: 100px;

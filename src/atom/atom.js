@@ -37,3 +37,7 @@ export const pokemonTypeSelectState = atom({
   key: "pokemonTypeSelectState",
   default: "all",
 });
+export const selectedPokemonInformationState = atom({
+  key: "selectedPokemonInformationState",
+  default: [],
+});

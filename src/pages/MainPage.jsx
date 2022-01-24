@@ -34,6 +34,7 @@ const MainPage = () => {
         <AutoCompletePokemons />
         <TypeSelectOfPokemon />
       </StyledMainHeader>
+
       <SelectedPokemonInfo />
       <PokemonList />
     </StyledBody>
