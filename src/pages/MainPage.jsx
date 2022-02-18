@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
+import { useRecoilState } from "recoil";
+import { pokemonArrayDataState } from "../atom/atom";
 import SelectedPokemonInfo from "../components/SelectedPokemonInfo";
 import { StyledBody, StyledMainHeader } from "../styles/MainPage.styles";
 import PokemonList from "../components/pokemonDataView/listOfPokemons/PokemonList";

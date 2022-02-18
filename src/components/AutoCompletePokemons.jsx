@@ -1,5 +1,5 @@
 import React from "react";
-import { Autocomplete, TextField, Box } from "@mui/material";
+import { Autocomplete, Box } from "@mui/material";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { pokemonArrayDataState, selectedPokemonState } from "../atom/atom";
 import {

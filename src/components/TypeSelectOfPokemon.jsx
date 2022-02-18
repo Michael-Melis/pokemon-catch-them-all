@@ -1,9 +1,6 @@
 import React from "react";
-import { Autocomplete, TextField, Box } from "@mui/material";
-import {
-  StyledInputDiv,
-  StyledInputTextField,
-} from "../styles/AutoCompletePokemons.styles";
+import { Autocomplete, TextField } from "@mui/material";
+import { StyledInputDiv } from "../styles/AutoCompletePokemons.styles";
 import { typeArray } from "../utils/pokemonTypeArray";
 import { useRecoilState } from "recoil";
 import { pokemonTypeSelectState } from "../atom/atom";

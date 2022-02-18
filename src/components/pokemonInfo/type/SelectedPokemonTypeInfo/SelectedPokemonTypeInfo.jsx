@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  StyledSelectedPokemonTypeInfo,
-  StyledDamage,
-} from "./SelectedPokemonTypeInfo.styles";
+import { StyledSelectedPokemonTypeInfo } from "./SelectedPokemonTypeInfo.styles";
 import { nanoid } from "nanoid";
 
 const SelectedPokemonTypeInfo = ({ type, selectedPokemonObject }) => {
