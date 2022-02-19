@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
-import axios from "axios";
-import { StyledSelectedPokemonTypeInfo } from "../../pokemonInfo/type/SelectedPokemonTypeInfo/SelectedPokemonTypeInfo.styles";
+import React, { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 
 const SelectedPokemonTypeInfo = ({ type, result }) => {
   const [selectedTypeInfo, setSelectedTypeInfo] = useState();
@@ -16,6 +15,7 @@ const SelectedPokemonTypeInfo = ({ type, result }) => {
       }
     };
     getAbilityData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
   return (
@@ -24,34 +24,28 @@ const SelectedPokemonTypeInfo = ({ type, result }) => {
       <div>
         <div>
           <h3>Double damage to:</h3>
-          {selectedTypeInfo["damage_relations"]["double_damage_to"].map(
-            (obj) => (
-              <p key={nanoid()}>{obj.name} type</p>
-            )
-          )}
+          {selectedTypeInfo['damage_relations']['double_damage_to'].map((obj) => (
+            <p key={nanoid()}>{obj.name} type</p>
+          ))}
         </div>
         <div>
           <h3>Half damage to:</h3>
-          {selectedTypeInfo["damage_relations"]["half_damage_to"].map((obj) => (
+          {selectedTypeInfo['damage_relations']['half_damage_to'].map((obj) => (
             <p key={nanoid()}>{obj.name} type</p>
           ))}
         </div>
 
         <div>
           <h3>Double damage from:</h3>
-          {selectedTypeInfo["damage_relations"]["double_damage_from"].map(
-            (obj) => (
-              <p key={nanoid()}>{obj.name} type</p>
-            )
-          )}
+          {selectedTypeInfo['damage_relations']['double_damage_from'].map((obj) => (
+            <p key={nanoid()}>{obj.name} type</p>
+          ))}
         </div>
         <div>
           <h3>Half damage from:</h3>
-          {selectedTypeInfo["damage_relations"]["half_damage_from"].map(
-            (obj) => (
-              <p key={nanoid()}>{obj.name} type</p>
-            )
-          )}
+          {selectedTypeInfo['damage_relations']['half_damage_from'].map((obj) => (
+            <p key={nanoid()}>{obj.name} type</p>
+          ))}
         </div>
       </div>
     </div>

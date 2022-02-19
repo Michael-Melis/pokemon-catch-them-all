@@ -1,7 +1,7 @@
-import React from "react";
-import { StyledBasicInfo, StyledStats } from "./PokemonBasicInfo.styles";
-import { nanoid } from "nanoid";
-import PokemonStatsInfo from "./pokemonStatsInfo/PokemonStatsInfo";
+import React from 'react';
+import { StyledBasicInfo, StyledStats } from './PokemonBasicInfo.styles';
+import { nanoid } from 'nanoid';
+import PokemonStatsInfo from './pokemonStatsInfo/PokemonStatsInfo';
 
 const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
   return (
@@ -10,10 +10,8 @@ const PokemonBasicInfo = ({ pokemonImg, selectedPokemonInfo }) => {
         <h1>
           You choosed:
           <span>
-            #{selectedPokemonInfo.id}{" "}
-            {`${selectedPokemonInfo.name
-              .charAt(0)
-              .toUpperCase()}${selectedPokemonInfo.name.slice(1)}`}
+            #{selectedPokemonInfo.id}{' '}
+            {`${selectedPokemonInfo.name.charAt(0).toUpperCase()}${selectedPokemonInfo.name.slice(1)}`}
           </span>
         </h1>
 

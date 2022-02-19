@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const PokemonStatsInfo = ({ obj }) => {
   const actualStat = obj.stat.name;
@@ -10,18 +10,18 @@ const PokemonStatsInfo = ({ obj }) => {
   const maxSpeed = 200;
   const renderSwitch = (actualStat) => {
     switch (actualStat) {
-      case "hp":
-        return Math.round((obj["base_stat"] * 100) / maxHp);
-      case "attack":
-        return Math.round((obj["base_stat"] * 100) / maxAttack);
-      case "defense":
-        return Math.round((obj["base_stat"] * 100) / maxDefense);
-      case "special-attack":
-        return Math.round((obj["base_stat"] * 100) / maxSpecialAttack);
-      case "special-defense":
-        return Math.round((obj["base_stat"] * 100) / maxSpecialDefense);
-      case "speed":
-        return Math.round((obj["base_stat"] * 100) / maxSpeed);
+      case 'hp':
+        return Math.round((obj['base_stat'] * 100) / maxHp);
+      case 'attack':
+        return Math.round((obj['base_stat'] * 100) / maxAttack);
+      case 'defense':
+        return Math.round((obj['base_stat'] * 100) / maxDefense);
+      case 'special-attack':
+        return Math.round((obj['base_stat'] * 100) / maxSpecialAttack);
+      case 'special-defense':
+        return Math.round((obj['base_stat'] * 100) / maxSpecialDefense);
+      case 'speed':
+        return Math.round((obj['base_stat'] * 100) / maxSpeed);
       default:
         return null;
     }
@@ -33,12 +33,10 @@ const PokemonStatsInfo = ({ obj }) => {
 
       <p
         style={{
-          background: `-webkit-linear-gradient(left, #70d9dd ${renderSwitch(
-            actualStat
-          )}%, white 0%)`,
+          background: `-webkit-linear-gradient(left, #70d9dd ${renderSwitch(actualStat)}%, white 0%)`,
         }}
       >
-        {obj["base_stat"]}
+        {obj['base_stat']}
       </p>
     </div>
   );

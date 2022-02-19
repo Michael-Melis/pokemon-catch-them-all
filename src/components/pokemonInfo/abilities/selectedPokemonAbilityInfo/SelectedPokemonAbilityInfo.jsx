@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { StyledSelectedPokemonAbilityInfo } from "./SelectedPokemonAbilityInfo.styles";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { StyledSelectedPokemonAbilityInfo } from './SelectedPokemonAbilityInfo.styles';
 
 const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
   const [selectedAbility, setSelectedAbility] = useState();
@@ -8,14 +8,13 @@ const SelectedPokemonAbilityInfo = ({ ability, selectedPokemonInfo }) => {
     const getAbilityData = async () => {
       try {
         const res = await axios.get(ability.ability.url);
-        setSelectedAbility(
-          res.data["effect_entries"].find((obj) => obj.language.name === "en")
-        );
+        setSelectedAbility(res.data['effect_entries'].find((obj) => obj.language.name === 'en'));
       } catch (error) {
         console.log(error);
       }
     };
     getAbilityData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedPokemonInfo]);
 
   return selectedAbility ? (

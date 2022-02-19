@@ -1,28 +1,18 @@
-import React, { useEffect } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
-import {
-  pokemonArrayDataState,
-  allPokemonsDataViewState,
-  pokemonTypeSelectState,
-} from "../../../atom/atom";
-import PokemonView from "./pokemonView/PokemonView";
-import { nanoid } from "nanoid";
-import axios from "axios";
-import {
-  StyledAllPokemonsView,
-  StyledTypeDivBg,
-  StyledPokemonDiv,
-} from "./PokemonList.styles";
+import React, { useEffect } from 'react';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { pokemonArrayDataState, allPokemonsDataViewState, pokemonTypeSelectState } from '../../../atom/atom';
+import PokemonView from './pokemonView/PokemonView';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
+import { StyledAllPokemonsView, StyledTypeDivBg, StyledPokemonDiv } from './PokemonList.styles';
 
 const PokemonList = () => {
   const allPokemons = useRecoilValue(pokemonArrayDataState);
-  const [allPokemonArray, setAllPokemonArray] = useRecoilState(
-    allPokemonsDataViewState
-  );
+  const [allPokemonArray, setAllPokemonArray] = useRecoilState(allPokemonsDataViewState);
   const pokemonTypeSelect = useRecoilValue(pokemonTypeSelectState);
 
   const renderTypeSwitch = (pokemonTypeSelect) => {
-    if (pokemonTypeSelect === "all") {
+    if (pokemonTypeSelect === 'all') {
       return allPokemonArray;
     }
 
@@ -44,11 +34,12 @@ const PokemonList = () => {
       setAllPokemonArray(results.map((result) => result.data));
     };
     fetchAllPokemonsData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allPokemons]);
   console.log(allPokemonArray);
   return allPokemonArray ? (
     <StyledAllPokemonsView>
-      {renderTypeSwitch(pokemonTypeSelect).map((pokemon, index) => (
+      {renderTypeSwitch(pokemonTypeSelect).map((pokemon) => (
         <StyledPokemonDiv key={nanoid()}>
           <PokemonView pokemon={pokemon} />
           {pokemon.types.map((type) => (
@@ -60,7 +51,7 @@ const PokemonList = () => {
       ))}
     </StyledAllPokemonsView>
   ) : (
-    ""
+    ''
   );
 };
 

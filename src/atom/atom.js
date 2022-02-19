@@ -1,43 +1,43 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const pokemonArrayDataState = atom({
-  key: "pokemonArrayDataState",
+  key: 'pokemonArrayDataState',
   default: [],
 });
 
 export const selectedPokemonState = atom({
-  key: "selectedPokemonState",
+  key: 'selectedPokemonState',
   default: {},
 });
 
 export const selectedPokemonInfoState = atom({
-  key: "selectedPokemonInfoState",
+  key: 'selectedPokemonInfoState',
   default: {},
 });
 
 export const selectedPokemonImgState = atom({
-  key: "selectedPokemonImgState",
-  default: "",
+  key: 'selectedPokemonImgState',
+  default: '',
 });
 
 export const selectedPokemonEvolutionState = atom({
-  key: "selectedPokemonEvolutionState",
+  key: 'selectedPokemonEvolutionState',
   default: {},
 });
 export const allPokemonsDataViewState = atom({
-  key: "allPokemonsDataViewState",
+  key: 'allPokemonsDataViewState',
   default: [],
 });
 
 export const allPokemonsTypeInfoState = atom({
-  key: "allPokemonsTypeInfoState",
+  key: 'allPokemonsTypeInfoState',
   default: [],
 });
 export const pokemonTypeSelectState = atom({
-  key: "pokemonTypeSelectState",
-  default: "all",
+  key: 'pokemonTypeSelectState',
+  default: 'all',
 });
 export const selectedPokemonInformationState = atom({
-  key: "selectedPokemonInformationState",
+  key: 'selectedPokemonInformationState',
   default: [],
 });

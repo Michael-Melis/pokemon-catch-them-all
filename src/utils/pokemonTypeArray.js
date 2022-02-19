@@ -1,74 +1,74 @@
 export const typeArray = [
   {
     id: 0,
-    name: "all",
+    name: 'all',
   },
   {
     id: 1,
-    name: "fire",
+    name: 'fire',
   },
   {
     id: 2,
-    name: "grass",
+    name: 'grass',
   },
   {
     id: 3,
-    name: "poison",
+    name: 'poison',
   },
   {
     id: 4,
-    name: "water",
+    name: 'water',
   },
   {
     id: 5,
-    name: "electric",
+    name: 'electric',
   },
   {
     id: 6,
-    name: "ice",
+    name: 'ice',
   },
   {
     id: 7,
-    name: "fighting",
+    name: 'fighting',
   },
   {
     id: 8,
-    name: "ground",
+    name: 'ground',
   },
   {
     id: 9,
-    name: "flying",
+    name: 'flying',
   },
   {
     id: 10,
-    name: "psychic",
+    name: 'psychic',
   },
   {
     id: 11,
-    name: "bug",
+    name: 'bug',
   },
   {
     id: 12,
-    name: "rock",
+    name: 'rock',
   },
   {
     id: 13,
-    name: "ghost",
+    name: 'ghost',
   },
   {
     id: 14,
-    name: "dark",
+    name: 'dark',
   },
   {
     id: 15,
-    name: "steel",
+    name: 'steel',
   },
   {
     id: 16,
-    name: "fairy",
+    name: 'fairy',
   },
   {
     id: 17,
-    name: "normal",
+    name: 'normal',
   },
 ];

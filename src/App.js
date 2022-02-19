@@ -1,6 +1,6 @@
-import MainPage from "./pages/MainPage";
-import { Routes, Route } from "react-router-dom";
-import SelectedPokemonBasicInfo from "./components/slectedPokemonInfo/selectedPokemonBasicInfo/SelectedPokemonBasicInfo";
+import MainPage from './pages/MainPage';
+import { Routes, Route } from 'react-router-dom';
+import SelectedPokemonBasicInfo from './components/slectedPokemonInfo/selectedPokemonBasicInfo/SelectedPokemonBasicInfo';
 
 const App = () => {
   return (

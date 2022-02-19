@@ -1,6 +1,6 @@
-import React from "react";
-import { StyledSinglePokemonViewDiv } from "./PokemonView.styles";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { StyledSinglePokemonViewDiv } from './PokemonView.styles';
+import { Link } from 'react-router-dom';
 
 const PokemonView = ({ pokemon }) => {
   const createPokemonId = (id) => {
@@ -13,7 +13,7 @@ const PokemonView = ({ pokemon }) => {
   return (
     <StyledSinglePokemonViewDiv>
       <Link to={`${pokemon.name}`}>
-        <img src={pokemon.sprites["front_default"]} alt={pokemon.name} />
+        <img src={pokemon.sprites['front_default']} alt={pokemon.name} />
 
         <h2>
           {`${createPokemonId(pokemon.id)}
